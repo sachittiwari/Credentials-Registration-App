@@ -1,50 +1,34 @@
-# React + TypeScript + Vite
+# Credentials Registration Client
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+This project contains all the front end code for client side of Credentials Registration Application.
+The user needs to login via single sign-on using Google Account
+The user needs to associate himself to one or more organizations during the first time that he logs.
+Subsequently, the user can select any organization for the session(if more than one) and manage credentials belonging to that organization.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Pre-requisites
 
-## Expanding the ESLint configuration
+Before running the application, please ensure the below components are installed and available
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **NodeJS 22.11.0**: This application is developed using node v22.11.0. Please ensure that it is already installed.
+- **Backend Application**: The backend application must be up and running. URL can be viewed in `.env` file.
+- **Google OAuth Creds**: OAuth credentials need to be created in Google Cloud. The client id is to be configured in `.env` file.
 
-- Configure the top-level `parserOptions` property like this:
+### Steps to run the application in local
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- **Import Source Code**: Clone this repository from Git and import in your preferred IDE.
+- **Install Dependencies**: Install dependencies using the below command
+  ```shell
+  npm install
+  ```
+- **Run the Application**: Build the application using the below command
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+  ```shell
+  npm start
+  ```
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+  - **Access the Application**: The application can be accessed using the below URL
+    ```shell
+    http://localhost:3000
+    ```
