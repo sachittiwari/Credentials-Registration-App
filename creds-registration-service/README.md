@@ -15,7 +15,6 @@ Before running the application, please ensure the below components are installed
 - **Java 21**: This application is developed using Java 21. Please ensure that it is installed either directly into the system or via the IDE.
 - **Maven**: This application is built using Maven. Please ensure that it is installed and available in the system.
 - **PostgreSQL**: This application uses PostgreSQL as the database. Please ensure that it is installed and running on the system.
-
 ### Steps to run the Application in local
 - **Import Source Code**: Clone this repository from Git and import in your preferred IDE.
 - **Setting Up Database**:

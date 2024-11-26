@@ -88,6 +88,7 @@ const App: React.FC = () => {
         {userResponse ? (
           <div>
             <h2>Welcome aboard, {userResponse.name}!!</h2>
+            <hr />
             <OrganizationComponent user={userResponse} />
             <button onClick={handleLogout} className="btn btn-warning logout">
               Logout
