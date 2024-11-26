@@ -16,7 +16,7 @@ Before running the application, please ensure the below components are installed
 - **Maven**: This application is built using Maven. Please ensure that it is installed and available in the system.
 - **PostgreSQL**: This application uses PostgreSQL as the database. Please ensure that it is installed and running on the system.
 
-### Steps to run the Application
+### Steps to run the Application in local
 - **Import Source Code**: Clone this repository from Git and import in your preferred IDE.
 - **Setting Up Database**:
     - Create a new database in PostgreSQL with the name `credentials_registration`.
