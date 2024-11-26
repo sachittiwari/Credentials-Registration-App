@@ -8,7 +8,7 @@ This application is a full stack application that contains four componenets:
 - **Envoy**: Envoy proxy as API gateway for backend
 
 ## Pre-requisites
-Docker needs to be installed
+Docker needs to be installed. README files for respective front-end and back-end components are present inside their respective folders
 
 ## Build and pull Docker Image
 - **Front End**: Refer the `Dockerfile` inside creds-registration-client project for building the front end image. Ensure the front end is built using `npm run build`. Go to this folder and execute below command to create docker image:
