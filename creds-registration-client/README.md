@@ -28,7 +28,7 @@ Before running the application, please ensure the below components are installed
   npm start
   ```
 
-  - **Access the Application**: The application can be accessed using the below URL
-    ```shell
-    http://localhost:3000
-    ```
+- **Access the Application**: The application can be accessed using the below URL
+  ```shell
+  http://localhost:3000
+  ```
