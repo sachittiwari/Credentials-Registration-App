@@ -1,0 +1,29 @@
+/* Add styling to the h1 element */
+h1 {
+  font-size: 36px; /* Large font size */
+  font-weight: bold; /* Make the font bold */
+  color: #2c3e50; /* Dark gray color */
+  text-align: center; /* Center-align the text */
+  padding: 20px 0; /* Add top and bottom padding */
+  background-color: #ecf0f1; /* Light background color */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+  margin: 0 auto; /* Center the heading */
+  max-width: 80%; /* Limit the maximum width */
+}
+
+/* Optional: Add a hover effect for the heading */
+h1:hover {
+  color: #3498db; /* Change text color to blue on hover */
+  transform: scale(1.05); /* Slightly enlarge the heading */
+  transition: all 0.3s ease; /* Smooth transition */
+}
+
+/* Fixes the logout button at the bottom of the screen */
+button.logout {
+  position: fixed; /* Fixed positioning */
+  bottom: 20px;     /* Distance from the bottom of the screen */
+  left: 50%;        /* Centers the button horizontally */
+  transform: translateX(-50%); /* Centers the button exactly */
+  margin-top: 20px; /* Optional: Add space between content and button */
+}
