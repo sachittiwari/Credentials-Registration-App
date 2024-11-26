@@ -1,0 +1,38 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-table-org-user-mapping
+      author: sachittiwari
+      changes:
+        - createTable:
+            tableName: USER_ORGANIZATION_MAPPING
+            columns:
+              - column:
+                  name: USER_ORGANIZATION_MAPPING_ID
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: USER_ID
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: ORGANIZATION_ID
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+            remarks: "Create Organization User Mapping table"
+        - addForeignKeyConstraint:
+            constraintName: fk_user_org_mapping_org_id
+            baseTableName: USER_ORGANIZATION_MAPPING
+            baseColumnNames: ORGANIZATION_ID
+            referencedTableName: ORGANIZATION
+            referencedColumnNames: ORGANIZATION_ID
+        - addForeignKeyConstraint:
+            constraintName: fk_user_org_mapping_user_id
+            baseTableName: USER_ORGANIZATION_MAPPING
+            baseColumnNames: USER_ID
+            referencedTableName: USERS
+            referencedColumnNames: USER_ID

@@ -1,0 +1,42 @@
+volumes:
+  postgres_data:
+
+services:
+  postgres-database:
+    image: postgres
+    ports:
+      - "5434:5432"
+    environment:
+      - POSTGRES_PASSWORD=postgresql
+      - POSTGRES_DB=credentials_registration
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+  java-service:
+    image: credentials-registration-service:1.0
+    ports:
+      - "8081:8085"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres-database:5432/credentials_registration
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=postgresql
+    depends_on:
+      - postgres-database
+  envoy-proxy:
+    image: envoyproxy/envoy:tools-v1.32.1
+    ports:
+      - "8080:8080"
+      - "9901:9901"
+    volumes:
+      - ./envoy.yaml:/etc/envoy/envoy.yaml:ro
+    depends_on:
+      - java-service
+  frontend-client:
+    image: credentials-registration-client:1.0
+    ports:
+      - "3000:80"
+    environment:
+      - VITE_GOOGLE_CLIENT_ID=3611859021-kb3covheu6e1vqkmajbg01rsbvr0i96p.apps.googleusercontent.com
+      - VITE_BACKEND_API_BASE_URL=http://envoy-proxy:8080
+    depends_on:
+      - envoy-proxy
+

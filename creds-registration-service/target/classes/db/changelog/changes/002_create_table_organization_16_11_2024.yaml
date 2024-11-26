@@ -1,0 +1,33 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-table-organization
+      author: sachittiwari
+      changes:
+        - createTable:
+            tableName: ORGANIZATION
+            columns:
+              - column:
+                  name: ORGANIZATION_ID
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: NAME
+                  type: VARCHAR(200)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: VAT_NUMBER
+                  type: VARCHAR(200)
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: SAP_ID
+                  type: VARCHAR(200)
+                  constraints:
+                    nullable: false
+                    unique: true
+            remarks: "Create Organization table"

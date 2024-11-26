@@ -1,0 +1,34 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert-table-organization-real-madrid
+      author: sachittiwari
+      changes:
+        - insert:
+            tableName: ORGANIZATION
+            columns:
+              - column:
+                  name: NAME
+                  value: "Real Madrid"
+              - column:
+                  name: VAT_NUMBER
+                  value: "VAT01"
+              - column:
+                  name: SAP_ID
+                  value: "SAP01"
+  - changeSet:
+      id: insert-table-organization-barcelona
+      author: sachittiwari
+      changes:
+        - insert:
+            tableName: ORGANIZATION
+            columns:
+              - column:
+                  name: NAME
+                  value: "Barcelona"
+              - column:
+                  name: VAT_NUMBER
+                  value: "VAT02"
+              - column:
+                  name: SAP_ID
+                  value: "SAP02"
+
